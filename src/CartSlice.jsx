@@ -57,5 +57,5 @@ export const {
   updateQuantity
 } = CartSlice.actions;
 
-// ✅ EXPORT REDUCER
+
 export default CartSlice.reducer;
