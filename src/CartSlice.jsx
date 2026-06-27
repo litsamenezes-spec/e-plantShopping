@@ -8,7 +8,7 @@ export const CartSlice = createSlice({
 
   reducers: {
 
-    // ✅ ADD ITEM (EXACT IBM LOGIC)
+    
     addItem: (state, action) => {
       const { name, image, cost } = action.payload;
 
@@ -28,14 +28,14 @@ export const CartSlice = createSlice({
       }
     },
 
-    // ✅ REMOVE ITEM
+    
     removeItem: (state, action) => {
       state.items = state.items.filter(
         (item) => item.name !== action.payload
       );
     },
 
-    // ✅ UPDATE QUANTITY
+    
     updateQuantity: (state, action) => {
       const { name, quantity } = action.payload;
 
@@ -50,7 +50,7 @@ export const CartSlice = createSlice({
   },
 });
 
-// ✅ EXPORT ACTIONS
+
 export const {
   addItem,
   removeItem,
