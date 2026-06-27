@@ -7,12 +7,10 @@ const CartItem = ({ onContinueShopping }) => {
   const cart = useSelector(state => state.cart.items);
   const dispatch = useDispatch();
 
-  // ✅ Subtotal for each item
   const calculateTotalCost = (item) => {
     return (item.quantity * parseFloat(item.cost.substring(1))).toFixed(2);
   };
 
-  // ✅ Total cart amount
   const calculateTotalAmount = () => {
     let total = 0;
 
@@ -24,17 +22,14 @@ const CartItem = ({ onContinueShopping }) => {
     return total.toFixed(2);
   };
 
-  // ✅ Continue shopping
   const handleContinueShopping = (e) => {
     onContinueShopping(e);
   };
 
-  // (Optional requirement placeholder)
   const handleCheckoutShopping = (e) => {
     alert('Functionality to be added for future reference');
   };
 
-  // ✅ Increment quantity
   const handleIncrement = (item) => {
     dispatch(
       updateQuantity({
@@ -44,7 +39,6 @@ const CartItem = ({ onContinueShopping }) => {
     );
   };
 
-  // ✅ Decrement quantity with condition
   const handleDecrement = (item) => {
     if (item.quantity > 1) {
       dispatch(
@@ -58,7 +52,6 @@ const CartItem = ({ onContinueShopping }) => {
     }
   };
 
-  // ✅ Remove item completely
   const handleRemove = (item) => {
     dispatch(removeItem(item.name));
   };
